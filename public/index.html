@@ -155,12 +155,12 @@
     </header>
 
     <div class="cocktails">
-        <div class="cocktail" data-id="1" onclick="toggleFlip(this)">
+        <div class="cocktail" data-id="1">
             <div class="cocktail-inner">
                 <div class="cocktail-front">
                     <div class="cocktail-name">Espresso Martini</div>
                     <div class="cocktail-style">Bold & Velvety</div>
-                    <img src="flip-icon.svg" class="flip-icon" alt="Flip Icon">
+                    <img src="flip-icon.svg" class="flip-icon" alt="Flip Icon" onclick="toggleFlip(this.parentElement.parentElement)">
                     <div class="description">A decadent cocktail combining espresso and coffee liqueur.</div>
                     <div class="origin">Origin: London, 1983</div>
                 </div>
@@ -176,25 +176,25 @@
                 </div>
             </div>
         </div>
-        <div class="cocktail" data-id="2" onclick="toggleFlip(this)">
+
+        <div class="cocktail" data-id="2">
             <div class="cocktail-inner">
                 <div class="cocktail-front">
                     <div class="cocktail-name">Spicy Margarita</div>
                     <div class="cocktail-style">Zesty & Spicy</div>
-                    <img src="flip-icon.svg" class="flip-icon" alt="Flip Icon">
+                    <img src="flip-icon.svg" class="flip-icon" alt="Flip Icon" onclick="toggleFlip(this.parentElement.parentElement)">
                     <div class="description">A bright and bold cocktail with a spicy twist.</div>
                     <div class="origin">Origin: Mexico, Modern Twist</div>
                 </div>
                 <div class="cocktail-back">
                     <ul class="ingredients">
-                        <li>6 cl Mezcal</li>
-                        <li>1 cl Curaçao</li>
-                        <li>1 cl Lime Juice</li>
-                        <li>0.75 cl Agave Nectar</li>
-                        <li>2-3 slices Jalapeño</li>
-                        <li>Tajin seasoning</li>
+                        <li>5 cl Tequila</li>
+                        <li>3 cl Lime Juice</li>
+                        <li>2 cl Triple Sec</li>
+                        <li>1 cl Agave Syrup</li>
+                        <li>Chili flakes (for garnish)</li>
                     </ul>
-                    <div>Shake with ice, strain, and serve over fresh ice with a Tajin rim.</div>
+                    <div>Shake with ice, strain into a salt-rimmed glass, and garnish with chili flakes.</div>
                 </div>
             </div>
         </div>
