@@ -1,78 +1,62 @@
-/* Grundlæggende layout */
-body {
+* {
     margin: 0;
-    font-family: 'Garamond', serif;
-    background-color: #1a1a1a;
-    color: white;
-    text-align: center;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Container til at centrere indhold */
-.container {
-    width: 80%;
-    max-width: 1100px;
-    margin: auto;
+body {
+    font-family: Garamond, serif;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #1a1a1a;
+    color: #fff;
 }
 
-/* Overskrift-styling */
 header {
-    padding: 30px 0;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    border-bottom: 2px solid goldenrod;
 }
 
 h1 {
     font-size: 3rem;
-    font-weight: bold;
+    margin-bottom: 0.5rem;
     color: goldenrod;
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
     font-style: italic;
-    font-weight: lighter;
+    color: #ccc;
 }
 
-h3 {
-    font-size: 1.4rem;
-}
-
-/* GUL LINJE under header */
-.header-line {
-    width: 80%;
-    height: 2px;
-    background-color: goldenrod;
-    margin: 15px auto 30px auto;
-}
-
-/* Grid layout – præcis som originalen */
-.cocktail-grid {
+.cocktails {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 kort pr. række */
-    gap: 30px;
-    margin-top: 30px;
-    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
-/* Kort-styling */
 .cocktail {
-    width: 320px;
-    height: 420px;
-    perspective: 1200px;
+    background: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    perspective: 1000px;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* LILLE BEVÆGELSE VED HOVER */
 .cocktail:hover {
-    transform: scale(1.02);
-    box-shadow: 0px 8px 15px rgba(255, 215, 0, 0.3);
+    transform: translateY(-5px);
 }
 
-/* Indre flip-animation */
 .cocktail-inner {
     width: 100%;
     height: 100%;
     position: relative;
-    transition: transform 0.6s ease-in-out;
+    transition: transform 0.6s;
     transform-style: preserve-3d;
 }
 
@@ -80,49 +64,14 @@ h3 {
     transform: rotateY(180deg);
 }
 
-/* Forside og bagside */
 .cocktail-front, .cocktail-back {
-    backface-visibility: hidden;
     position: absolute;
     width: 100%;
     height: 100%;
+    backface-visibility: hidden;
     padding: 20px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    text-align: left;
 }
 
-/* Bagsiden flippes */
 .cocktail-back {
     transform: rotateY(180deg);
-}
-
-/* Tekstjustering PRÆCIS som originalen */
-.cocktail-front h3,
-.cocktail-back h3 {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: goldenrod;
-    margin-bottom: 10px;
-}
-
-.cocktail-front p,
-.cocktail-back p {
-    font-size: 1rem;
-    margin: 8px 0;
-    line-height: 1.5;
-}
-
-.cocktail-back ul {
-    padding-left: 15px;
-}
-
-.cocktail-back li {
-    font-size: 1rem;
-    margin-bottom: 5px;
 }
