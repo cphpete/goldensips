@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goldensips - Signature Libations</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <header>
+        <h1>Goldensips</h1>
+        <h2>Signature Libations</h2>
+        <h3>An Exclusive Selection for the Discerning Drinker</h3>
+    </header>
+
+    <div class="cocktails">
+        <div class="cocktail" onclick="flipCard(this)">
+            <div class="cocktail-inner">
+                <div class="cocktail-front">
+                    <div class="cocktail-name">
+                        <span>Espresso Martini</span>
+                        <span class="cocktail-style">Bold & Velvety</span>
+                    </div>
+                    <div class="description">A decadent cocktail combining the boldness of espresso with the smooth sweetness of coffee liqueur and vodka. Perfect for those who enjoy rich, layered flavors.</div>
+                    <div class="origin">Origin: Invented in 1983 by bartender Dick Bradsell at the Soho Brasserie in London, England.</div>
+                </div>
+                <div class="cocktail-back">
+                    <h3>Recipe</h3>
+                    <ul>
+                        <li>4 cl Vodka</li>
+                        <li>3 cl Kahlua</li>
+                        <li>5 cl Freshly brewed espresso</li>
+                        <li>0.5 cl Licor 43</li>
+                    </ul>
+                    <p>Shake all ingredients with ice and strain into a martini glass.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tilføj de andre cocktails her med samme format -->
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
