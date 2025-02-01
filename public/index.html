@@ -4,7 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goldensips - Signature Libations</title>
-    <link rel="stylesheet" href="index.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Garamond, serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 2px solid goldenrod;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: goldenrod;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-style: italic;
+            color: #ccc;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: #fff;
+        }
+
+        .cocktails {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .cocktail {
+            perspective: 1000px;
+        }
+
+        .cocktail-inner {
+            position: relative;
+            width: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .cocktail:hover .cocktail-inner {
+            transform: rotateY(180deg);
+        }
+
+        .cocktail-front, .cocktail-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .cocktail-back {
+            transform: rotateY(180deg);
+        }
+
+        .cocktail-name {
+            font-size: 1.5rem;
+            color: goldenrod;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .cocktail-style {
+            font-size: 1rem;
+            color: #ccc;
+            font-style: italic;
+        }
+
+        .description, .origin, .ingredients {
+            margin: 1rem 0;
+            color: #eee;
+        }
+
+        .origin {
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .cocktails {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,7 +130,7 @@
     </header>
 
     <div class="cocktails">
-        <div class="cocktail" onclick="flipCard(this)">
+        <div class="cocktail">
             <div class="cocktail-inner">
                 <div class="cocktail-front">
                     <div class="cocktail-name">
@@ -25,22 +141,74 @@
                     <div class="origin">Origin: Invented in 1983 by bartender Dick Bradsell at the Soho Brasserie in London, England.</div>
                 </div>
                 <div class="cocktail-back">
-                    <h3>Recipe</h3>
-                    <ul>
-                        <li>4 cl Vodka</li>
-                        <li>3 cl Kahlua</li>
-                        <li>5 cl Freshly brewed espresso</li>
-                        <li>0.5 cl Licor 43</li>
-                    </ul>
-                    <p>Shake all ingredients with ice and strain into a martini glass.</p>
+                    <div class="ingredients">Ingredients: Vodka, espresso, coffee liqueur, simple syrup.</div>
                 </div>
             </div>
         </div>
 
-        <!-- Tilføj de andre cocktails her med samme format -->
+        <div class="cocktail">
+            <div class="cocktail-inner">
+                <div class="cocktail-front">
+                    <div class="cocktail-name">
+                        <span>Spicy Margarita</span>
+                        <span class="cocktail-style">Zesty & Spicy</span>
+                    </div>
+                    <div class="description">A bright and bold cocktail that blends the tartness of lime with the warmth of jalapeño heat and a savory Tajin rim. Refreshing and invigorating.</div>
+                    <div class="origin">Origin: Inspired by the original Margarita, invented in Mexico with a modern spicy twist.</div>
+                </div>
+                <div class="cocktail-back">
+                    <div class="ingredients">Ingredients: Tequila, fresh lime juice, orange liqueur, jalapeño slices, Tajin seasoning.</div>
+                </div>
+            </div>
+        </div>
 
+        <div class="cocktail">
+            <div class="cocktail-inner">
+                <div class="cocktail-front">
+                    <div class="cocktail-name">
+                        <span>Hey Mambo</span>
+                        <span class="cocktail-style">Tropical & Bittersweet</span>
+                    </div>
+                    <div class="description">A delightful riff on the Piña Colada, combining the tropical sweetness of pineapple and coconut with a bittersweet touch from Aperol.</div>
+                    <div class="origin">Origin: Crafted by Mark Hibbard in Portland, Maine.</div>
+                </div>
+                <div class="cocktail-back">
+                    <div class="ingredients">Ingredients: Aperol, mezcal, blanco tequila, pineapple juice, coconut cream, fresh lime juice.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cocktail">
+            <div class="cocktail-inner">
+                <div class="cocktail-front">
+                    <div class="cocktail-name">
+                        <span>Amaretto Sour</span>
+                        <span class="cocktail-style">Sweet & Citrusy</span>
+                    </div>
+                    <div class="description">A smooth and nutty drink with the sweetness of amaretto and the bright, tangy finish of fresh lemon, elevated by a velvety texture.</div>
+                    <div class="origin">Origin: Popularized in the 1970s, the modern version with bourbon has become a beloved variation worldwide.</div>
+                </div>
+                <div class="cocktail-back">
+                    <div class="ingredients">Ingredients: Amaretto, bourbon, fresh lemon juice, simple syrup, egg white.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cocktail">
+            <div class="cocktail-inner">
+                <div class="cocktail-front">
+                    <div class="cocktail-name">
+                        <span>Whiskey Sour / Rum Sour</span>
+                        <span class="cocktail-style">Rich & Balanced</span>
+                    </div>
+                    <div class="description">A timeless cocktail blending the smoothness of whiskey or rum with a touch of citrus and the warm spice of bitters.</div>
+                    <div class="origin">Origin: With roots in the 1860s, this cocktail has stood the test of time, offering endless variations.</div>
+                </div>
+                <div class="cocktail-back">
+                    <div class="ingredients">Ingredients: Whiskey or rum, lemon juice, simple syrup, egg white, Angostura bitters.</div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
