@@ -7,8 +7,9 @@ body {
     text-align: center;
 }
 
+/* Container til at centrere indhold */
 .container {
-    width: 90%;
+    width: 80%;
     max-width: 1100px;
     margin: auto;
 }
@@ -34,11 +35,19 @@ h3 {
     font-size: 1.4rem;
 }
 
-/* Grid layout – 3 kort pr. række */
+/* GUL LINJE under header */
+.header-line {
+    width: 80%;
+    height: 2px;
+    background-color: goldenrod;
+    margin: 15px auto 30px auto;
+}
+
+/* Grid layout – præcis som originalen */
 .cocktail-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 kort pr. række */
-    gap: 20px;
+    gap: 30px;
     margin-top: 30px;
     justify-items: center;
 }
@@ -49,8 +58,16 @@ h3 {
     height: 420px;
     perspective: 1200px;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* LILLE BEVÆGELSE VED HOVER */
+.cocktail:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 8px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Indre flip-animation */
 .cocktail-inner {
     width: 100%;
     height: 100%;
@@ -63,6 +80,7 @@ h3 {
     transform: rotateY(180deg);
 }
 
+/* Forside og bagside */
 .cocktail-front, .cocktail-back {
     backface-visibility: hidden;
     position: absolute;
@@ -84,7 +102,7 @@ h3 {
     transform: rotateY(180deg);
 }
 
-/* Tekstjustering */
+/* Tekstjustering PRÆCIS som originalen */
 .cocktail-front h3,
 .cocktail-back h3 {
     font-size: 1.4rem;
