@@ -17,30 +17,6 @@ const cocktails = [
     origin: "Inspired by the original Margarita, invented in the late 1930s in Mexico.",
     ingredients: ["6 cl Mezcal", "1 cl Curaçao", "1 cl Lime Juice", "0.75 cl Agave Nectar", "2-3 slices Jalapeño", "Tajin seasoning (for rim)"],
     instructions: "Muddle jalapeño, shake with ice, strain into a Tajin-rimmed glass."
-  },
-  {
-    name: "Hey Mambo",
-    style: "Tropical & Bittersweet",
-    description: "A tropical blend of pineapple, coconut, tequila, and Aperol.",
-    origin: "Crafted by Mark Hibbard at Via Vecchia in Portland, Maine.",
-    ingredients: ["1.5 cl Mezcal", "1.5 cl Blanco Tequila", "3 cl Aperol", "4.5 cl Pineapple Juice", "1.5 cl Lime Juice", "4.5 cl Cream of Coconut"],
-    instructions: "Blend with ice, pour into a tiki glass, garnish with pineapple."
-  },
-  {
-    name: "Amaretto Sour",
-    style: "Nutty & Tart",
-    description: "A smooth amaretto cocktail with bourbon and lemon.",
-    origin: "Popularized in the 1970s, the modern version with bourbon has become a beloved variation worldwide.",
-    ingredients: ["4.5 cl Amaretto", "1.5 cl Bourbon", "2.5 cl Lemon Juice", "1 cl Simple Syrup", "1.5 cl Egg White"],
-    instructions: "Dry shake, add ice, shake again, strain into a rocks glass, garnish with cherries."
-  },
-  {
-    name: "Whiskey Sour / Rum Sour",
-    style: "Rich & Balanced",
-    description: "A smooth whiskey or rum cocktail with citrus and bitters.",
-    origin: "With roots in the 1860s, this cocktail has stood the test of time, offering endless variations.",
-    ingredients: ["6 cl Bourbon or Dark Rum", "2.25 cl Rich Simple Syrup", "2.25 cl Lemon Juice", "2 cl Egg White", "2-3 dashes Angostura Bitters"],
-    instructions: "Dry shake, add ice, shake again, strain into a rocks glass, garnish with bitters."
   }
 ];
 
@@ -57,6 +33,7 @@ const App = () => {
         <h1>Goldensips</h1>
         <h2>Signature Libations</h2>
         <h3>An Exclusive Selection for the Discerning Drinker</h3>
+        <div className="header-line"></div>
       </header>
 
       <div className="cocktail-grid">
@@ -67,7 +44,7 @@ const App = () => {
                 <h3>{cocktail.name}</h3>
                 <p><em>{cocktail.style}</em></p>
                 <p>{cocktail.description}</p>
-                <small><em>{cocktail.origin}</em></small>
+                <p><em>{cocktail.origin}</em></p>
               </div>
               <div className="cocktail-back">
                 <h3>Recipe</h3>
