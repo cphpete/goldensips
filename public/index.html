@@ -97,8 +97,8 @@
             position: absolute;
             top: 2px;
             right: 2px;
-            width: 16px;
-            height: 16px;
+            width: 20px;
+            height: 20px;
             cursor: pointer;
         }
 
@@ -155,14 +155,14 @@
     </header>
 
     <div class="cocktails">
-        <div class="cocktail" data-id="1" onclick="toggleFlip(this)">
+        <div class="cocktail" data-id="1">
             <div class="cocktail-inner">
                 <div class="cocktail-front">
                     <div class="cocktail-name">Espresso Martini</div>
                     <div class="cocktail-style">Bold & Velvety</div>
-                    <img src="flip-icon.svg" class="flip-icon" alt="Flip Icon">
-                    <div class="description">A decadent cocktail combining espresso and coffee liqueur.</div>
-                    <div class="origin">Origin: London, 1983</div>
+                    <img src="flip-icon.svg" class="flip-icon" alt="Flip Icon" onclick="toggleFlip(this.parentElement.parentElement.parentElement)">
+                    <div class="description">A decadent cocktail combining the boldness of espresso with the smooth sweetness of coffee liqueur and vodka. Perfect for those who enjoy rich, layered flavors.</div>
+                    <div class="origin">Origin: Invented in 1983 by bartender Dick Bradsell at the Soho Brasserie in London, England, originally called the Vodka Espresso.</div>
                 </div>
                 <div class="cocktail-back">
                     <ul class="ingredients">
